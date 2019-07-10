@@ -56,12 +56,11 @@ def verification_code(request):
         if PythonAnywhere is False:
             truetype_str = 'segoepr.ttf'
         else:
-            truetype_str = '/home/mzx/NJUSTzhcp-base/static/fonts/segoepr.ttf'
+            truetype_str = '/home/EO16/EO16score/static/fonts/segoepr.ttf'
         draw.text((i * (width/4) + 0, -10),
                   rand_python[i],
                   tuple(text_color),
                   font=ImageFont.truetype(truetype_str, 30),
-                  # font=ImageFont.truetype('/home/mzx/NJUSTzhcp-base/static/fonts/segoepr.ttf', 50),
                   align='center')
 
     # 3 释放画笔

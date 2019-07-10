@@ -45,14 +45,14 @@ if PythonAnywhere is False:
     }
 elif PythonAnywhere is True:
     DEBUG = False
-    ALLOWED_HOSTS = ['mzx.pythonanywhere.com']
+    ALLOWED_HOSTS = ['EO16.pythonanywhere.com']
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql',
-            'NAME': "mzx$zhcp",
-            'USER': 'mzx',
-            'PASSWORD': '86110339mzx',
-            'HOST': 'mzx.mysql.pythonanywhere-services.com',
+            'NAME': "EO16$eo16score",
+            'USER': 'EO16',
+            'PASSWORD': 'EO16mzxsql',
+            'HOST': 'EO16.mysql.pythonanywhere-services.com',
         }
     }
 
