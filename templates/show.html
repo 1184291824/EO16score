@@ -1,0 +1,226 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block header %}
+我的分数
+{% endblock %}
+{% block style %}
+<style>
+.mui-scroll-wrapper{
+    top: 50px;
+}
+.mui-table-view-cell.mui-collapse .mui-collapse-content{
+    padding-top: 0;
+}
+.mui-table-view-cell.mui-collapse .mui-table-view {
+    margin-top: 0;
+}
+#donate{
+    background-image: url("{% static 'img/donate.jpg' %}");
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: calc(480 / 308 * 80vw + 30px);
+}
+</style>
+{% endblock %}
+{% block body %}
+<div class="mui-scroll-wrapper">
+	<div class="mui-scroll">
+		<ul class="mui-table-view">
+            <li class="mui-table-view-cell mui-collapse">
+                <a class="mui-navigate-right" href="#">专业分数</a>
+                <div class="mui-collapse-content">
+                    <ul class="mui-table-view">
+                    <li class="mui-table-view-cell">1-5学期专业分数
+                        <span class="mui-badge score-num">{{ student.academic_score_1_5 | floatformat:2 }}</span>
+                    </li>
+                    <li class="mui-table-view-cell">6学期专业分数
+                        <span class="mui-badge score-num">{{ student.academic_score_6 | floatformat:2 }}</span>
+                    </li>
+                    <li class="mui-table-view-cell">1-6学期专业分数
+                        <span class="mui-badge score-num">{{ student.academic_score_1_6 | floatformat:2}}</span>
+                    </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+        <ul class="mui-table-view">
+            <li class="mui-table-view-cell mui-collapse">
+                <a class="mui-navigate-right" href="#">综合分数</a>
+                <div class="mui-collapse-content">
+                    <ul class="mui-table-view">
+                    <li class="mui-table-view-cell">1-5学期综合分数
+                        <span class="mui-badge score-num">{{ student.whole_score_1_5 | floatformat:2 }}</span>
+                    </li>
+                    <li class="mui-table-view-cell">1-6学期综合分数
+                        <span class="mui-badge score-num">{{ student.whole_score_1_6 | floatformat:2 }}</span>
+                    </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+        <ul class="mui-table-view">
+            <li class="mui-table-view-cell mui-collapse">
+                <a class="mui-navigate-right" href="#">加分分数</a>
+                <div class="mui-collapse-content">
+                    <ul class="mui-table-view">
+                    <li class="mui-table-view-cell">1学期发展性素质加分
+                        <span class="mui-badge score-num">{{ student.developmental_score_1 }}</span>
+                    </li>
+                    <li class="mui-table-view-cell">1学期科创加分
+                        <span class="mui-badge score-num">{{ student.science_score_1 }}</span>
+                    </li>
+                    <li class="mui-table-view-cell">2学期发展性素质加分
+                        <span class="mui-badge score-num">{{ student.developmental_score_2 }}</span>
+                    </li>
+                    <li class="mui-table-view-cell">2学期科创加分
+                        <span class="mui-badge score-num">{{ student.science_score_2 }}</span>
+                    </li>
+                    <li class="mui-table-view-cell">3学期发展性素质加分
+                        <span class="mui-badge score-num">{{ student.developmental_score_3 }}</span>
+                    </li>
+                    <li class="mui-table-view-cell">3学期科创加分
+                        <span class="mui-badge score-num">{{ student.science_score_3 }}</span>
+                    </li>
+                    <li class="mui-table-view-cell">4学期发展性素质加分
+                        <span class="mui-badge score-num">{{ student.developmental_score_4 }}</span>
+                    </li>
+                    <li class="mui-table-view-cell">4学期科创加分
+                        <span class="mui-badge score-num">{{ student.science_score_4 }}</span>
+                    </li>
+                    <li class="mui-table-view-cell">5学期发展性素质加分
+                        <span class="mui-badge score-num">{{ student.developmental_score_5 }}</span>
+                    </li>
+                    <li class="mui-table-view-cell">5学期科创加分
+                        <span class="mui-badge score-num">{{ student.science_score_5 }}</span>
+                    </li>
+                    <li class="mui-table-view-cell">6学期发展性素质加分
+                        <span class="mui-badge score-num">{{ student.developmental_score_6 }}</span>
+                    </li>
+                    <li class="mui-table-view-cell">6学期科创加分
+                        <span class="mui-badge score-num">{{ student.science_score_6 }}</span>
+                    </li>
+                    </ul>
+
+                </div>
+            </li>
+        </ul>
+        <ul class="mui-table-view">
+            <li class="mui-table-view-cell mui-collapse">
+                <a class="mui-navigate-right" href="#">排名</a>
+                <div class="mui-collapse-content">
+                    <ul class="mui-table-view">
+                    <li class="mui-table-view-cell">1-5学期专业排名
+                        <span class="mui-badge rank-num" id="rank1"></span>
+                    </li>
+                    <li class="mui-table-view-cell">1-6学期专业排名
+                        <span class="mui-badge rank-num" id="rank2"></span>
+                    </li>
+                    <li class="mui-table-view-cell">1-5学期综合排名
+                        <span class="mui-badge rank-num" id="rank3"></span>
+                    </li>
+                    <li class="mui-table-view-cell">1-6学期综合排名(预测)
+                        <span class="mui-badge rank-num" id="rank4"></span>
+                    </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+        <ul class="mui-table-view">
+            <li class="mui-table-view-cell mui-collapse">
+                <a class="mui-navigate-right" href="#">保研预测</a>
+                <div class="mui-collapse-content">
+                    <ul class="mui-table-view">
+                    <li class="mui-table-view-cell">1-6学期综合排名(预测)
+                        <span class="mui-badge rank-num" id="rank5"></span>
+                    </li>
+                    <li class="mui-table-view-cell">所在专业
+                    <span class="mui-badge">{{ student.student_system.system_name }}</span>
+                    </li>
+                    <li class="mui-table-view-cell">专业人数
+                    <span class="mui-badge">{{ student.student_system.system_student_num }}</span>
+                    </li>
+                    <li class="mui-table-view-cell">2019届电光院保研人数
+                    <span class="mui-badge">88</span>
+                    </li>
+                    <li class="mui-table-view-cell" style="font-size: 0.8em">预测今年{{ student.student_system.system_name }}保研人数
+                    <span class="mui-badge">{% widthratio student.student_system.system_student_num 591 88 %}</span>
+                    </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+        <ul class="mui-table-view">
+            <li class="mui-table-view-cell mui-collapse">
+                <a class="mui-navigate-right" href="#"><span class="mui-icon mui-icon-navigate"></span> 捐助</a>
+                <div class="mui-collapse-content" id="donate"></div>
+            </li>
+        </ul>
+	</div>
+</div>
+{% endblock %}
+{% block script %}
+<script>
+$(document).ready(function () {
+    mui('.mui-scroll-wrapper').scroll({
+        scrollY: true, //是否竖向滚动
+        scrollX: false, //是否横向滚动
+        startX: 0, //初始化时滚动至x
+        startY: 0, //初始化时滚动至y
+        indicators: true, //是否显示滚动条
+        deceleration:0.0006, //阻尼系数,系数越小滑动越灵敏
+        bounce: true //是否启用回弹
+    });
+    $.ajax({
+        url: "{% url 'score:get_rank' %}?student_id={{ student.student_id }}",
+        type: "GET",
+        success: function (ranking) {
+            if (ranking !== 'error') {
+                $('#rank1').text(ranking["-academic_score_1_5"]);
+                $('#rank2').text(ranking["-academic_score_1_6"]);
+                $('#rank3').text(ranking["-whole_score_1_5"]);
+                $('#rank4').text(ranking["-whole_score_1_6"]);
+                $('#rank5').text(ranking["-whole_score_1_6"]);
+                $('.rank-num').each(function () {
+                    if (parseInt($(this).text())<{% widthratio student.student_system.system_student_num 591 88 %}){
+                        $(this).addClass('mui-badge-success');
+                        return 0;
+                    }
+                    else {
+                        $(this).addClass('mui-badge-primary');
+                        console.log(parseInt($(this).text()));
+                        return 0;
+                    }
+                });
+                return 0;
+            }
+            else {
+                window.location.href = "{% url 'score:show' %}"
+            }
+        },
+        error: function (e) {
+            console.log(e);
+        }
+    });
+    $('.score-num').each(function () {
+        if (parseFloat($(this).text())<60){
+            $(this).addClass('mui-badge-danger');
+            return 0;
+        }
+        if (parseFloat($(this).text())<70){
+            $(this).addClass('mui-badge-warning');
+            return 0;
+        }
+        if (parseFloat($(this).text())<90){
+            $(this).addClass('mui-badge-primary');
+            return 0;
+        }
+        else {
+            $(this).addClass('mui-badge-success');
+            return 0;
+        }
+    });
+})
+
+</script>
+{% endblock %}

@@ -46,7 +46,7 @@ class LoginRecordAdmin(admin.ModelAdmin):
         'login_location',
         'login_time',
     ]
-    list_filter = ['login_user']  # 筛选器
+    search_fields = ['login_user']
     date_hierarchy = 'login_time'  # 详细时间分层筛选
     list_per_page = 20
 

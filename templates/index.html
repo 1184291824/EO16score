@@ -1,0 +1,156 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block style %}
+<style type="text/css">
+.login-title{
+    text-align: center;
+    width: 100%;
+    height: 2em;
+    line-height: 2em;
+    margin: 1em auto;
+}
+.login-logo{
+    margin: 20px auto;
+    text-align: center;
+
+}
+.login-form{
+    margin: 20px 40px;
+}
+.mui-input-row{
+    margin: 10px 0;
+    background-color: white;
+    border-radius: 10px;
+    padding: 0.2em 0;
+}
+.mui-btn{
+    margin-top: 1em;
+    width: 100%;
+    height: 3em;
+    border-radius: 10px;
+}
+.mui-checkbox{
+    background: transparent;
+    font-size: 0.7em;
+    text-align: center;
+}
+</style>
+{% endblock %}
+{% block header %}登录{% endblock %}
+{% block body %}
+<div class="login-logo">
+    <img src="{% static 'img/NJUSTlogo.png' %}" alt="南京理工大学" width="200">
+</div>
+<div class="login-title">
+    <p>欢迎使用电光16查分系统</p>
+</div>
+<div class="login-form">
+    <form method="post">
+        {% csrf_token %}
+        <div class="mui-input-row">
+            <label for="student_id">学号：</label>
+            <input type="text" class="mui-input-clear" name="student_id" id="student_id" placeholder="请输入学号" maxlength="12" required="required">
+        </div>
+        <div class="mui-input-row">
+            <label for="student_name">姓名：</label>
+            <input type="text" class="mui-input-clear" name="student_name" id="student_name" placeholder="请输入姓名" maxlength="12" required="required">
+        </div>
+        <div class="mui-input-row">
+            <label for="student_password">密码：</label>
+            <input type="password" class="mui-input-password" name="student_password" id="student_password" placeholder="身份证后6位，X大写" maxlength="6" required="required">
+        </div>
+        <div class="mui-input-row">
+            <label for="code" style="padding: 0"><img class="code" onclick="refreshSrc()"/></label>
+            <input type="text" class="mui-input-clear" name="code" id="code" maxlength="4" minlength="4" placeholder="验证码" required="required">
+        </div>
+        <div class="mui-input-row mui-checkbox mui-left">
+            <label for="agree">我已知道本网站分数仅供参考</label>
+            <input name="agree" value="agree" type="checkbox" id="agree" checked>
+        </div>
+        <div class="mui-button-row">
+            <button type="button" class="mui-btn mui-btn-blue" id="button">查询我的分数</button>
+        </div>
+    </form>
+</div>
+{% endblock %}
+{% block script %}
+<script type="text/javascript" charset="UTF-8">
+$(document).ready(function () {
+    refreshSrc();
+    let button = $('#button');
+    let code = $('#code');
+    button[0].addEventListener('tap', function () {
+        mui('#button').button('loading');
+        var check = true;
+        mui("input").each(function() {
+            //若当前input为空，则alert提醒
+            if(!this.value || this.value.trim() === "") {
+                var label = this.previousElementSibling;
+                mui.alert(label.innerText + "不允许为空");
+                check = false;
+                mui('#button').button('reset');
+                return false;
+            }
+        });
+        if (check === true){
+            if ($('#agree').prop('checked')) {
+                $.ajax({
+                    url: '{% url "score:login_check" %}',
+                    data: {
+                        'student_id': $('#student_id').val(),
+                        'student_password': $('#student_password').val(),
+                        'student_name': $('#student_name').val(),
+                        'code': code.val(),
+                        "csrfmiddlewaretoken":$("[name='csrfmiddlewaretoken']").val(),
+
+                    },
+                    type: 'POST',
+                    success: function (result) {
+                        if (result === 'codeWrong') {
+                            mui.alert('您输入的验证码错误', '提示', '确定', function () {
+                                code.val("").focus();
+                                refreshSrc();
+                                mui('#button').button('reset');
+                                return 0;
+                            });
+                            return 0;
+                        }
+                        if (result === 'idDoesNotExist') {
+                            mui.alert('抱歉，您所查找的学号暂无信息', '提示', '确定', function () {
+                                $('#student_id').val("").focus();
+                                code.val("");
+                                refreshSrc();
+                                mui('#button').button('reset');
+                                return 0;
+                            });
+                            return 0;
+                        }
+                        if (result === "passwordWrong") {
+                            mui.alert('您输入的密码或姓名有误', '提示', '确定', function () {
+                                $('#student_password').val("").focus();
+                                $('#student_name').val("");
+                                code.val("");
+                                refreshSrc();
+                                mui('#button').button('reset');
+                                return 0;
+                            });
+                            return 0;
+                        }
+                        if (result === "successLogin") {
+                            mui.toast('登陆成功',{ duration:'long', type:'div' });
+                            window.location.href='{% url "score:get_rank" %}';
+                            return 0;
+                        }
+
+                    }
+                })
+            }
+            else {
+                mui.alert('请同意“我已知道本网站分数仅供参考”', '提示', '确定')
+            }
+        }
+    })
+})
+
+</script>
+{% endblock %}

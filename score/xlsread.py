@@ -54,4 +54,17 @@ def read_excel_1_5(xls_name):
     return student_list
 
 
+def read_password():
+    data1 = xlrd.open_workbook("D:/project/EO16score/static/xls/pwAll.xlsx").sheet_by_index(0)
+    student_list = []
+    for data_row in range(1, 591):
+        student = {
+            "student_id": data1.cell(data_row, 2).value,
+            "student_password": data1.cell(data_row, 3).value[-6:]
+        }
+        student_list.append(student)
+        # print(student, data_row)
+    return student_list
+
+# read_password()
 # read_excel_6("电子科学与技术", "DK")

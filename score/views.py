@@ -1,4 +1,5 @@
 from django.shortcuts import render, HttpResponse, redirect
+from django.http import JsonResponse
 from .models import *
 from django.contrib.auth import logout
 from .request import *
@@ -9,16 +10,12 @@ from .xlsread import *
 
 
 def test(request):
-    pass
+    return render(request, 'show.html')
 
 
 def login_html(request):
     """返回登录界面"""
-    login_status = request.session.get('login_status', 0)
-    if login_status == 0:
-        return render(request, 'login.html')
-    else:
-        return redirect('BPlan:index')
+    return render(request, 'index.html')
 
 
 def login_check(request):
@@ -26,10 +23,11 @@ def login_check(request):
     if request.method == 'POST':
         student_id = request.POST['student_id']
         student_password = request.POST['student_password']
+        student_name = request.POST['student_name']
         if verification_code_check(request):
             try:
                 student = Student.objects.get(student_id__exact=student_id)
-                if student_password == student.student_password:
+                if student_password == student.student_password and student_name == student.student_name:
                     request.session['login_status'] = 1
                     request.session['student_id'] = student.student_id
                     request.session['student_name'] = student.student_name
@@ -53,7 +51,12 @@ def login_check(request):
         else:
             return HttpResponse('codeWrong')  # 返回验证码错误
     else:
-        return redirect('BPlan:index')
+        return redirect('score:login_html')
+
+
+def login_logout(request):
+    logout(request)
+    return redirect('score:login_html')
 
 
 def refresh6(request):
@@ -122,19 +125,44 @@ def refresh_score(request):
     return HttpResponse('success')
 
 
+def refresh_password(request):
+    """更新密码"""
+    student_list = read_password()
+    for std in student_list:
+        std_id = std['student_id']
+        try:
+            student = Student.objects.get(student_id__exact=std_id)
+        except Student.DoesNotExist:
+            print(std_id)
+            continue
+        student.student_password = std['student_password']
+        student.save()
+    return HttpResponse('success')
+
+
 def get_rank(request):
-    student_id = request.GET.get('student_id')
-    rank_type_list = [
-        "-academic_score_1_5",
-        "-academic_score_1_6",
-        "-whole_score_1_5",
-        "-whole_score_1_6",
-    ]
-    ranking = []
+    student_id = request.session.get('student_id')
+    ranking = {
+        "-academic_score_1_5": 0,
+        "-academic_score_1_6": 0,
+        "-whole_score_1_5": 0,
+        "-whole_score_1_6": 0,
+    }
 
     student = Student.objects.get(student_id=student_id)
     student_list = Student.objects.filter(student_system=student.student_system)
-    for rank_type in rank_type_list:
-        ranking.append(list(student_list.order_by(rank_type).values_list('student_id', flat=True)).index(student_id)+1)
+    for k in ranking.keys():
+        rank_num = str(list(student_list.order_by(k).values_list('student_id', flat=True)).index(student_id)+1)
+        ranking[k] = rank_num
+    return JsonResponse(ranking)
 
-    return HttpResponse(ranking)
+
+def show(request):
+    if request.session.get('login_status', 0):
+        student_id = request.session['student_id']
+        student = Student.objects.get(student_id__exact=student_id)
+        return render(request, 'show.html', {
+            'student': student,
+        })
+    else:
+        return redirect('score:login_html')
