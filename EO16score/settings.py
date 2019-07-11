@@ -27,8 +27,8 @@ SECRET_KEY = 'y4il--atntx^*un(yzwqq3+r9sog5$kqrsqn@a$kxgiyx9-%^+'
 #
 # ALLOWED_HOSTS = []
 
-# PythonAnywhere = False  # 设为False是为了本地支持
-PythonAnywhere = True  # 设为True是为了上线PythonAnywhere支持
+PythonAnywhere = False  # 设为False是为了本地支持
+# PythonAnywhere = True  # 设为True是为了上线PythonAnywhere支持
 
 if PythonAnywhere is False:
     DEBUG = True

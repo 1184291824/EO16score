@@ -21,6 +21,10 @@
     background-repeat: no-repeat;
     height: calc(480 / 308 * 80vw + 30px);
 }
+#logout-button{
+    float: right;
+    width: 6em;
+}
 </style>
 {% endblock %}
 {% block body %}
@@ -29,13 +33,49 @@
         <ul class="mui-table-view" style="margin-bottom: 2em">
             <li class="mui-table-view-cell mui-media">
                 <a href="#">
-{#                    <img class="mui-media-object mui-pull-left" src="../images/shuijiao.jpg">#}
                     <div class="mui-media-body">
-                        {{ student.student_name }}
+                        {{ student.student_name }}<button type="button" class="mui-btn mui-btn-danger" id="logout-button" data-loading-text="注销中">注销</button>
                         <p class='mui-ellipsis'>{{ student.student_id }}</p>
                         <p class='mui-ellipsis'><span>{{ student.student_system }}</span><span style="float: right">更新时间：{{ student.change_time }}</span></p>
                     </div>
                 </a>
+            </li>
+        </ul>
+        <ul class="mui-table-view" style="margin-bottom: 2em">
+            <li class="mui-table-view-cell mui-media">
+                <p><span class="mui-icon mui-icon-info"></span>如果您在<span style="color: red">前5学期中有挂科</span>记录，很抱歉，我们没有您前五学期的成绩数据。</p>
+{#                <p><span class="mui-icon mui-icon-info"></span><span style="color: blue">出国留学</span>和<span style="color: blue">转专业</span>同学的分数需要等待后期重新计算，请不要着急。</p>#}
+{#                <p><span class="mui-icon mui-icon-info"></span>这里的成绩仅供参考，<span style="color: red">不保证正确性</span></p>#}
+            </li>
+            <li class="mui-table-view-cell mui-media">
+                <p><span class="mui-icon mui-icon-info"></span><span style="color: blue">出国留学</span>和<span style="color: blue">转专业</span>同学的分数需要等待后期重新计算，请不要着急。</p>
+            </li>
+            <li class="mui-table-view-cell mui-media">
+                <p><span class="mui-icon mui-icon-info"></span>这里的成绩仅供参考，<span style="color: red">不保证正确性</span></p>
+            </li>
+            <li class="mui-table-view-cell mui-media">
+                <p><span class="mui-icon mui-icon-info"></span>最终结果以<span style="color: red">8月底</span>级网公示成绩为准，本网站不负任何责任</p>
+            </li>
+        </ul>
+        <ul class="mui-table-view" style="margin-bottom: 2em">
+            <li class="mui-table-view-cell mui-collapse">
+                <a class="mui-navigate-right" href="#"><span class="mui-icon mui-icon-search"></span> 成绩和排名算法</a>
+                <div class="mui-collapse-content">
+                    <ul class="mui-table-view">
+                    <li class="mui-table-view-cell">
+                        <p>前5学期的成绩为前一届教育班和学习指导部的数据</p>
+                    </li>
+                    <li class="mui-table-view-cell">
+                        <p>第6学期成绩为教务处导出的平均学分绩</p>
+                    </li>
+                    <li class="mui-table-view-cell">
+                        <p>排名为你的该项成绩在专业中的排名，并且不包含有挂科记录的同学</p>
+                    </li>
+                    <li class="mui-table-view-cell">
+                        <p>前6学期专业分数为仅学业成绩的平均学分绩，前6学期综合分数中，第六学期的综合素质加分统一按0计算</p>
+                    </li>
+                    </ul>
+                </div>
             </li>
         </ul>
 		<ul class="mui-table-view">
@@ -186,6 +226,7 @@
                 <div class="mui-collapse-content" id="donate"></div>
             </li>
         </ul>
+
 	</div>
 </div>
 {% endblock %}
@@ -250,6 +291,10 @@ $(document).ready(function () {
             return 0;
         }
     });
+    $('#logout-button')[0].addEventListener('tap', function () {
+        mui('#logout-button').button('loading');
+        $(location).attr('href', '{% url 'score:login_logout' %}');
+    })
 })
 
 </script>

@@ -15,8 +15,10 @@ def test(request):
 
 def login_html(request):
     """返回登录界面"""
-    return redirect('score:test')
-    return render(request, 'index.html')
+    if request.session.get('login_status', 0) == 0:
+        return render(request, 'index.html')
+    else:
+        return redirect('score:show')
 
 
 def login_check(request):
