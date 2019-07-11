@@ -26,6 +26,18 @@
 {% block body %}
 <div class="mui-scroll-wrapper">
 	<div class="mui-scroll">
+        <ul class="mui-table-view" style="margin-bottom: 2em">
+            <li class="mui-table-view-cell mui-media">
+                <a href="#">
+{#                    <img class="mui-media-object mui-pull-left" src="../images/shuijiao.jpg">#}
+                    <div class="mui-media-body">
+                        {{ student.student_name }}
+                        <p class='mui-ellipsis'>{{ student.student_id }}</p>
+                        <p class='mui-ellipsis'><span>{{ student.student_system }}</span><span style="float: right">更新时间：{{ student.change_time }}</span></p>
+                    </div>
+                </a>
+            </li>
+        </ul>
 		<ul class="mui-table-view">
             <li class="mui-table-view-cell mui-collapse">
                 <a class="mui-navigate-right" href="#">专业分数</a>
@@ -102,6 +114,24 @@
                     </li>
                     </ul>
 
+                </div>
+            </li>
+        </ul>
+        <ul class="mui-table-view">
+            <li class="mui-table-view-cell mui-collapse">
+                <a class="mui-navigate-right" href="#">学分</a>
+                <div class="mui-collapse-content">
+                    <ul class="mui-table-view">
+                    <li class="mui-table-view-cell">1-5学期学分
+                        <span class="mui-badge mui-badge-success">{{ student.credit_1_5 }}</span>
+                    </li>
+                    <li class="mui-table-view-cell">6学期学分
+                        <span class="mui-badge mui-badge-success">{{ student.credit_6 }}</span>
+                    </li>
+                    <li class="mui-table-view-cell">1-6学期学分
+                        <span class="mui-badge mui-badge-success">{{ student.credit_1_6 }}</span>
+                    </li>
+                    </ul>
                 </div>
             </li>
         </ul>
@@ -188,7 +218,7 @@ $(document).ready(function () {
                     }
                     else {
                         $(this).addClass('mui-badge-primary');
-                        console.log(parseInt($(this).text()));
+                        {#console.log(parseInt($(this).text()));#}
                         return 0;
                     }
                 });
