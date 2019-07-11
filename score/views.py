@@ -10,11 +10,12 @@ from .xlsread import *
 
 
 def test(request):
-    return render(request, 'show.html')
+    return HttpResponse('服务器维护中，可以先去打一把LOL')
 
 
 def login_html(request):
     """返回登录界面"""
+    return redirect('score:test')
     return render(request, 'index.html')
 
 
