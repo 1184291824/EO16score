@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="badb5195-36c9-47a0-b97d-ef883c3e5dc7" name="默认更改列表" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/score/request.py" beforeDir="false" afterPath="$PROJECT_DIR$/score/request.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/show.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/show.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/score/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/score/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -68,11 +65,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/score/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="354">
-              <caret line="35" column="61" lean-forward="true" selection-start-line="35" selection-start-column="61" selection-end-line="35" selection-end-column="61" />
+            <state relative-caret-position="402">
+              <caret line="42" column="42" lean-forward="true" selection-start-line="42" selection-start-column="42" selection-end-line="42" selection-end-column="42" />
               <folding>
                 <element signature="e#0#59#0" expanded="true" />
               </folding>
@@ -80,10 +77,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/score/request.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
+            <state relative-caret-position="552">
               <caret line="38" column="31" lean-forward="true" selection-start-line="38" selection-start-column="31" selection-end-line="38" selection-end-column="31" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
@@ -116,12 +113,12 @@
         <option value="$PROJECT_DIR$/score/admin.py" />
         <option value="$PROJECT_DIR$/score/xlsread.py" />
         <option value="$PROJECT_DIR$/score/urls.py" />
-        <option value="$PROJECT_DIR$/score/views.py" />
         <option value="$PROJECT_DIR$/EO16score/settings.py" />
         <option value="$PROJECT_DIR$/score/VerificationCode.py" />
         <option value="$PROJECT_DIR$/templates/show.html" />
         <option value="$PROJECT_DIR$/templates/index.html" />
         <option value="$PROJECT_DIR$/score/request.py" />
+        <option value="$PROJECT_DIR$/score/views.py" />
       </list>
     </option>
   </component>
@@ -295,12 +292,12 @@
       <workItem from="1562659881563" duration="68000" />
       <workItem from="1562659950700" duration="24972000" />
       <workItem from="1562727320463" duration="25530000" />
-      <workItem from="1562811867003" duration="1693000" />
+      <workItem from="1562811867003" duration="2313000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52263000" />
+    <option name="totallyTimeSpent" value="52883000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
@@ -440,22 +437,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/score/views.py">
+    <entry file="file://$PROJECT_DIR$/score/request.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="35" column="61" lean-forward="true" selection-start-line="35" selection-start-column="61" selection-end-line="35" selection-end-column="61" />
+        <state relative-caret-position="552">
+          <caret line="38" column="31" lean-forward="true" selection-start-line="38" selection-start-column="31" selection-end-line="38" selection-end-column="31" />
           <folding>
-            <element signature="e#0#59#0" expanded="true" />
+            <element signature="e#0#29#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/score/request.py">
+    <entry file="file://$PROJECT_DIR$/score/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="38" column="31" lean-forward="true" selection-start-line="38" selection-start-column="31" selection-end-line="38" selection-end-column="31" />
+        <state relative-caret-position="402">
+          <caret line="42" column="42" lean-forward="true" selection-start-line="42" selection-start-column="42" selection-end-line="42" selection-end-column="42" />
           <folding>
-            <element signature="e#0#29#0" expanded="true" />
+            <element signature="e#0#59#0" expanded="true" />
           </folding>
         </state>
       </provider>
