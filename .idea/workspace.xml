@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="badb5195-36c9-47a0-b97d-ef883c3e5dc7" name="默认更改列表" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EO16score/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/EO16score/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/score/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/score/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/score/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/score/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/show.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/show.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EO16score/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/EO16score/urls.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,19 +36,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/show.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="477">
-              <caret line="295" column="67" lean-forward="true" selection-start-line="295" selection-start-column="67" selection-end-line="295" selection-end-column="67" />
-              <folding>
-                <element signature="e#1128#1148#0#HTML" expanded="true" />
-                <element signature="e#1370#1388#0#HTML" expanded="true" />
-                <element signature="e#1930#1949#0#HTML" expanded="true" />
-                <element signature="e#1968#1987#0#HTML" expanded="true" />
-                <element signature="e#2540#2558#0#HTML" expanded="true" />
-                <element signature="e#2291#2309#0#HTML" expanded="true" />
-              </folding>
+            <state relative-caret-position="309">
+              <caret line="288" column="14" lean-forward="true" selection-start-line="288" selection-start-column="14" selection-end-line="288" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -58,7 +49,7 @@
         <entry file="file://$PROJECT_DIR$/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="402">
-              <caret line="141" column="79" lean-forward="true" selection-start-line="141" selection-start-column="28" selection-end-line="141" selection-end-column="79" />
+              <caret line="141" column="79" selection-start-line="141" selection-start-column="28" selection-end-line="141" selection-end-column="79" />
             </state>
           </provider>
         </entry>
@@ -75,24 +66,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/score/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="12" column="42" lean-forward="true" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
+            <state relative-caret-position="144">
+              <caret line="12" column="42" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
               <folding>
                 <element signature="e#0#59#0" expanded="true" />
-                <element signature="e#2248#2912#0" />
-                <element signature="e#2944#4296#0" />
-                <element signature="e#4331#5000#0" />
-                <element signature="e#5038#5429#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/EO16score/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-126">
-              <caret line="30" column="42" lean-forward="true" selection-start-line="30" selection-start-column="42" selection-end-line="30" selection-end-column="42" />
+            <state relative-caret-position="288">
+              <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
             </state>
           </provider>
         </entry>
@@ -104,6 +91,18 @@
               <caret line="15" column="67" selection-start-line="15" selection-start-column="67" selection-end-line="15" selection-end-column="67" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/EO16score/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="498">
+              <caret line="21" column="60" lean-forward="true" selection-start-line="21" selection-start-column="60" selection-end-line="21" selection-end-column="60" />
+              <folding>
+                <element signature="e#633#665#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -137,7 +136,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/EO16score/urls.py" />
         <option value="$PROJECT_DIR$/EO16score/__init__.py" />
         <option value="$PROJECT_DIR$/score/apps.py" />
         <option value="$PROJECT_DIR$/score/models.py" />
@@ -147,10 +145,11 @@
         <option value="$PROJECT_DIR$/score/VerificationCode.py" />
         <option value="$PROJECT_DIR$/templates/index.html" />
         <option value="$PROJECT_DIR$/score/request.py" />
-        <option value="$PROJECT_DIR$/EO16score/settings.py" />
         <option value="$PROJECT_DIR$/score/views.py" />
         <option value="$PROJECT_DIR$/score/urls.py" />
         <option value="$PROJECT_DIR$/templates/show.html" />
+        <option value="$PROJECT_DIR$/EO16score/urls.py" />
+        <option value="$PROJECT_DIR$/EO16score/settings.py" />
       </list>
     </option>
   </component>
@@ -164,7 +163,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="950" />
     <option name="width" value="975" />
     <option name="height" value="1050" />
@@ -325,18 +324,19 @@
       <workItem from="1562659950700" duration="24972000" />
       <workItem from="1562727320463" duration="25530000" />
       <workItem from="1562811867003" duration="2904000" />
-      <workItem from="1562820623488" duration="3556000" />
+      <workItem from="1562820623488" duration="3944000" />
+      <workItem from="1562846903560" duration="259000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57030000" />
+    <option name="totallyTimeSpent" value="57677000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="848" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26340482" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26675603" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -367,16 +367,6 @@
     <SUITE FILE_PATH="coverage/EO16score$xlsread.coverage" NAME="xlsread Coverage Results" MODIFIED="1562735036832" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/score" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/EO16score/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="19" selection-start-line="19" selection-end-line="23" />
-          <folding>
-            <element signature="e#633#665#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/62d6aff1-bb2a-4cc7-ab32-ef7c490d4fc8/console.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -421,10 +411,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/score/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="762">
+          <caret line="53" column="82" selection-start-line="53" selection-start-column="66" selection-end-line="53" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/show.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="288" column="14" lean-forward="true" selection-start-line="288" selection-start-column="14" selection-end-line="288" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="768">
           <caret line="32" column="92" selection-start-line="32" selection-start-column="92" selection-end-line="32" selection-end-column="92" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/score/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="12" column="42" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#59#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -438,38 +452,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/score/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="762">
-          <caret line="53" column="82" selection-start-line="53" selection-start-column="66" selection-end-line="53" selection-end-column="82" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="402">
-          <caret line="141" column="79" lean-forward="true" selection-start-line="141" selection-start-column="28" selection-end-line="141" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/score/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="12" column="42" lean-forward="true" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#59#0" expanded="true" />
-            <element signature="e#2248#2912#0" />
-            <element signature="e#2944#4296#0" />
-            <element signature="e#4331#5000#0" />
-            <element signature="e#5038#5429#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EO16score/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-126">
-          <caret line="30" column="42" lean-forward="true" selection-start-line="30" selection-start-column="42" selection-end-line="30" selection-end-column="42" />
+          <caret line="141" column="79" selection-start-line="141" selection-start-column="28" selection-end-line="141" selection-end-column="79" />
         </state>
       </provider>
     </entry>
@@ -483,18 +469,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/show.html">
+    <entry file="file://$PROJECT_DIR$/EO16score/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="477">
-          <caret line="295" column="67" lean-forward="true" selection-start-line="295" selection-start-column="67" selection-end-line="295" selection-end-column="67" />
+        <state relative-caret-position="498">
+          <caret line="21" column="60" lean-forward="true" selection-start-line="21" selection-start-column="60" selection-end-line="21" selection-end-column="60" />
           <folding>
-            <element signature="e#1128#1148#0#HTML" expanded="true" />
-            <element signature="e#1370#1388#0#HTML" expanded="true" />
-            <element signature="e#1930#1949#0#HTML" expanded="true" />
-            <element signature="e#1968#1987#0#HTML" expanded="true" />
-            <element signature="e#2540#2558#0#HTML" expanded="true" />
-            <element signature="e#2291#2309#0#HTML" expanded="true" />
+            <element signature="e#633#665#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EO16score/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
         </state>
       </provider>
     </entry>
